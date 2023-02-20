@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
+
+import Login from "../Login/Login";
 
 function App() {
-    return (
-        <h1> Coucou </h1>
-    )
+  return (
+    <Login />
+  )
 }
 
 export default App;
