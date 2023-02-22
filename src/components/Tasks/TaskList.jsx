@@ -19,7 +19,7 @@ console.log(TaskList);
   return (
     <div>
       <h2>Task List</h2>
-      {tasks.length > 0 ? (
+      {tasks?.length > 0 ? (
         <ul>
           {tasks.map((task) => (
             <li key={task.id}>
@@ -41,3 +41,5 @@ console.log(TaskList);
 }
 
 export default TaskList;
+
+
