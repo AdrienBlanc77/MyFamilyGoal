@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import {AuthSlices} from "../../store/slices/AuthSlices";
 import { Button } from "../Common/Button";
 import { ButtonType } from "../Common/ButtonType";
 import { SettingsButton } from "../Common/SettingsButton";
 import { TextField } from "../Common/TextField";
 import { ValidateButton } from "../Common/ValidateButton";
+import {Login} from "../Login/Login"
 
 function App() {
     const [bobValue, setBobValue] = useState();
@@ -29,9 +31,22 @@ function App() {
 
     return (
         <>
+            <AuthSlices/>
+            <Login/>
             <SettingsButton onClick={() => console.log("je fais les settings!")} />
             <ValidateButton onClick={() => console.log("clickounette")} />
             <Button text="Se Connecter" onClick={() => console.log("connect")} type={ButtonType.Outlined} />
+
+            <form onSubmit={onSubmit}>
+                <TextField
+                    name="bob"
+                    required
+                    label="Bobby"
+                    value={bobValue}
+                    onChange={setBobValue}
+                    errorText={bobErrorText}
+                />
+            </form>
 
             <form onSubmit={onSubmit}>
                 <TextField
